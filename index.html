@@ -28,12 +28,17 @@
         <h1>Data Science for Economists.</h1>
         
         <h3>The Price of BitCoin</h3>
-        <p>The first chart the trading range of Bitcoin between 8h time periods.</p>
+        <p>The first chart shows the trading range of Bitcoin between 8h time periods.</p>
         <div class="chart" id="Chart1"></div>
 
         <h3>Bank of England: Rates</h3>
         <p>My second chart looks at the main policy rate (%) for the Bank of England</p>
         <div class="chart" id="Chart2"> </div>
+        
+        <h3>IMF Lending</h3>
+        <p>My third chart displays outstanding IMF Lending</p>
+        <div class="chart" id="Chart3"> </div>
+        
     </div> 
 </body>
 
@@ -42,10 +47,12 @@
     //Define charts:
     var myChart1 = "bitcoin_price.json";
     var myChart2 = "bank_rate.json";
+    var myChart3 = "IMFLending.json";
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
 </script>
 
 </html>
