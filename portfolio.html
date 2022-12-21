@@ -38,6 +38,10 @@
         <p>My third chart displays outstanding IMF Lending</p>
         <div class="chart" id="Chart3"> </div>
         
+        <h3>IMF Lending</h3>
+        <p>My forth chart displays outstanding IMF lending when relative to GDP.</p>
+        <div class="chart" id="Chart4"> </div>
+        
     </div> 
 </body>
 
@@ -47,11 +51,13 @@
     var myChart1 = "chart1_bitcoin_price.json";
     var myChart2 = "chart2_bank_rate.json";
     var myChart3 = "chart3_IMFLending.json";
+    var myChart4 = "chart4_IMFLending_GDP.json";
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
     vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
 </script>
 
 </html>
