@@ -11,7 +11,7 @@
   "data":{"url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/IMFLendingData_GDP.csv"},
   
   "height": 300,
-  "width": 300,
+  "width": 325,
 
   "mark": {
     "type": "bar",
