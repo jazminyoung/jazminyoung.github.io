@@ -22,6 +22,13 @@ h1, h3, p{
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
+
+p2{
+    color:rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    size: 12
+}
     
 .myWeek1{
     margin: auto;
