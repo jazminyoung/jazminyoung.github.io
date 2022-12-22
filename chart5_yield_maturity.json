@@ -1,9 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A simple bar chart with embedded data.",
+  "title": {
+      "text": "Daily Yield",
+      "subtitle":"Predicted daily changes in yield.",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"},
   "background": "white",
   "padding": 5,
-  "width": 350,
+  "width": 300,
   "height": 300,
   "style": "cell",
   "data": [
