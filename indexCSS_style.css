@@ -2,28 +2,31 @@
 
 /* FONTS: */
 
-h1{
+h1, h3,p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: blueviolet;
+    font-variant: small-caps;
+    background-color: rgb(236, 203, 232;
 }
 
 p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
     font-variant: small-caps;
-    color:red;
-    background-color: white;
+    color:rgb(0, 0, 0);
+    background-color: rgb(236, 203, 232;
+    text-align: center;
 }
 
 
 /* AREAS OF THE PAGE */
 
 body{
-    background-color: blue;
+    background-color: rgb(172, 220, 243);
 }
 
 .wrap{
-    background-color: aqua;
+    background-color: rgb(244, 205, 182);
+    text-align: center;
 }
 
 
@@ -41,28 +44,74 @@ a{
 
 
 #link1{
-    border-color:pink;
-    border-style:dashed
-}
-
-#link2{
-    border:2px;
-    border-color:black;
-    border-style: solid;
-
-    border-radius: 5px;
-
-}
-
-#link3{
-    background-color: rgba(0, 47, 167, .5);
-
-    padding:20px;
+    border-color:rgb(244, 205, 182);
     
     border:2px;
-    border-color:grey;
+    border-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: dashed;
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:700;
+    color:white;
+    
+   text-decoration: none;
+    
+   animation: border-pulsate1 4s infinite;
+   
+}
+
+
+#link1:hover{
+
+    background-color: rgb(172, 220, 243);
+
+    border:2px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 3px;
     border-style: solid;
-    border-radius: 10px;
+    
+}
+
+
+#link2{
+    border-color:rgb(244, 205, 182);
+    
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: dashed
+        
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:700;
+    color:white;
+    
+    text-decoration: none;
+    
+    animation: border-pulsate1 4s infinite;
+
+}
+
+
+#link2:hover{
+
+    background-color: rgb(172, 220, 243);
+
+    border:2px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: solid;
+    
+}
+
+
+#link3{
+    border-color:rgb(244, 205, 182);
+    
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: dashed
 
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
@@ -70,39 +119,52 @@ a{
     
     text-decoration: none;
     
+    animation: border-pulsate1 4s infinite;
+    
 }
+
 
 #link3:hover{
 
-    background-color: rgba(0, 47, 167, .8);
+    background-color: rgb(172, 220, 243);
 
     border:2px;
-    border-color:yellow;
+    border-color:rgb(0, 0, 0);
+    border-radius: 3px;
     border-style: solid;
+    
+    
     
 }
 
 
 #link4{
-    background-color: yellow;
-
-    padding:20px;
+    border-color:rgb(244, 205, 182);
     
-    border:20px;
-    border-color:black;
-    border-style: solid;
-    border-radius: 10px;
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: dashed
 
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
-    color:grey;
+    color:white;
     
     text-decoration: none;
 
     animation: border-pulsate1 4s infinite;
 }
 
+#link4:hover{
 
+    background-color: rgb(172, 220, 243);
+
+    border:2px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: solid;
+    
+}   
 
 
 
