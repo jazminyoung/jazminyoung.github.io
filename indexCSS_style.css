@@ -31,8 +31,6 @@ body{
 }
 
 
-
-
 /* BUTTONS */
 
 a{
@@ -133,9 +131,7 @@ a{
     border-color:rgb(0, 0, 0);
     border-style: solid;
     border-radius: 3px;
-    
-    
-    
+       
 }
 
 
@@ -154,6 +150,7 @@ a{
     text-decoration: none;
 
     animation: border-pulsate1 4s infinite;
+
 }
 
 #link4:hover{
@@ -166,7 +163,6 @@ a{
     border-radius: 3px;
     
 }   
-
 
 
 /* CODE FOR PUSLING BORDERS */
