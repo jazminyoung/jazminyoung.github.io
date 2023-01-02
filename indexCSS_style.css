@@ -2,10 +2,11 @@
 
 /* FONTS: */
 
-h1, h3,p{
+h1, h3, p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-variant: small-caps;
     background-color: rgb(236, 203, 232;
+    text-align: center;
 }
 
 p{
@@ -13,7 +14,7 @@ p{
     font-size: larger;
     font-variant: small-caps;
     color:rgb(0, 0, 0);
-    background-color: rgb(236, 203, 232;
+    background-color: rgba(236, 203, 232);
     text-align: center;
 }
 
@@ -21,11 +22,11 @@ p{
 /* AREAS OF THE PAGE */
 
 body{
-    background-color: rgb(172, 220, 243);
+    background-color: rgba(172, 220, 243);
 }
 
 .wrap{
-    background-color: rgb(244, 205, 182);
+    background-color: rgba(244, 205, 182);
     text-align: center;
 }
 
@@ -36,7 +37,7 @@ body{
 
 a{
     border: 5px;
-    border-color: black;
+    border-color: rgb(0, 0, 0);
     border-style: solid;
 
     margin:20px
@@ -44,7 +45,7 @@ a{
 
 
 #link1{
-    border-color:rgb(244, 205, 182);
+    border-color: rgb(244, 205, 182);
     
     border:2px;
     border-color: rgb(0, 0, 0);
@@ -53,7 +54,7 @@ a{
     
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
-    color:white;
+    color: rgb(244, 205, 182);
     
    text-decoration: none;
     
@@ -64,18 +65,18 @@ a{
 
 #link1:hover{
 
-    background-color: rgb(172, 220, 243);
+    background-color: rgba(172, 220, 243);
 
     border:2px;
-    border-color:rgb(0, 0, 0);
-    border-radius: 3px;
+    border-color: rgb(0, 0, 0);
     border-style: solid;
+    border-radius: 3px;
     
 }
 
 
 #link2{
-    border-color:rgb(244, 205, 182);
+    border-color: rgb(244, 205, 182);
     
     border:2px;
     border-color: rgb(0, 0, 0);
@@ -84,7 +85,7 @@ a{
         
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
-    color:white;
+    color: rgb(244, 205, 182);
     
     text-decoration: none;
     
@@ -95,18 +96,18 @@ a{
 
 #link2:hover{
 
-    background-color: rgb(172, 220, 243);
+    background-color: rgba(172, 220, 243);
 
     border:2px;
     border-color:rgb(0, 0, 0);
-    border-radius: 3px;
     border-style: solid;
+    border-radius: 3px;
     
 }
 
 
 #link3{
-    border-color:rgb(244, 205, 182);
+    border-color: rgb(244, 205, 182);
     
     border:2px;
     border-color: rgb(0, 0, 0);
@@ -115,7 +116,7 @@ a{
 
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
-    color:white;
+    color: rgb(244, 205, 182);
     
     text-decoration: none;
     
@@ -126,12 +127,12 @@ a{
 
 #link3:hover{
 
-    background-color: rgb(172, 220, 243);
+    background-color: rgba(172, 220, 243);
 
     border:2px;
     border-color:rgb(0, 0, 0);
-    border-radius: 3px;
     border-style: solid;
+    border-radius: 3px;
     
     
     
@@ -148,7 +149,7 @@ a{
 
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
-    color:white;
+    color: rgb(244, 205, 182);
     
     text-decoration: none;
 
@@ -157,12 +158,12 @@ a{
 
 #link4:hover{
 
-    background-color: rgb(172, 220, 243);
+    background-color: rgba(172, 220, 243);
 
     border:2px;
     border-color:rgb(0, 0, 0);
-    border-radius: 3px;
     border-style: solid;
+    border-radius: 3px;
     
 }   
 
