@@ -79,16 +79,16 @@ a{
     border:2px;
     border-color: rgb(0, 0, 0);
     border-radius: 3px;
-    border-style: dashed
-        
+    border-style: dashed;
+    
     font-family: 'Courier New', Courier, monospace;
     font-weight:700;
     color: rgb(255, 255, 255);
     
-    text-decoration: none;
+   text-decoration: none;
     
-    animation: border-pulsate1 4s infinite;
-
+   animation: border-pulsate1 4s infinite;
+   
 }
 
 
@@ -97,68 +97,7 @@ a{
     background-color: rgba(172, 220, 243);
 
     border:2px;
-    border-color:rgb(0, 0, 0);
-    border-style: solid;
-    border-radius: 3px;
-    
-}
-
-
-#link3{
-    border-color: rgb(244, 205, 182);
-    
-    border:2px;
     border-color: rgb(0, 0, 0);
-    border-radius: 3px;
-    border-style: dashed
-
-    font-family: 'Courier New', Courier, monospace;
-    font-weight:700;
-    color: rgb(255, 255, 255);
-    
-    text-decoration: none;
-    
-    animation: border-pulsate1 4s infinite;
-    
-}
-
-
-#link3:hover{
-
-    background-color: rgba(172, 220, 243);
-
-    border:2px;
-    border-color:rgb(0, 0, 0);
-    border-style: solid;
-    border-radius: 3px;
-       
-}
-
-
-#link4{
-    border-color:rgb(244, 205, 182);
-    
-    border:2px;
-    border-color: rgb(0, 0, 0);
-    border-radius: 3px;
-    border-style: dashed
-
-    font-family: 'Courier New', Courier, monospace;
-    font-weight:700;
-    color: rgb(255, 255, 255);
-    
-    text-decoration: none;
-
-    animation: border-pulsate1 4s infinite;
-
-}
-
-#link4:hover{
-
-    background-color: rgba(172, 220, 243);
-
-    border:2px;
-    border-color:rgb(0, 0, 0);
     border-style: solid;
     border-radius: 3px;
     
