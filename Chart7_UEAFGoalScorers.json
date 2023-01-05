@@ -1,0 +1,136 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A simple bar chart with embedded data.","title": {
+    "text": "Top Champions League Goal Scores",
+    "subtitle": "UEFA top champsions league goal scorers of all time.",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+    },
+  "background": "white",
+  "padding": 5,
+  "height": 200,
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "values": [
+        {"Player": "Cristiano Ronaldo", "Goals": 140},
+        {"Player": "Lionel Messi", "Goals": 129},
+        {"Player": "Robert Lewandowski", "Goals": 91},
+        {"Player": "Karim Benzema", "Goals": 86},
+        {"Player": "Raul", "Goals": 71},
+        {"Player": "Ruud van Nistelrooy", "Goals": 56},
+        {"Player": "Thomas Muller", "Goals": 53},
+        {"Player": "Thierry Henry", "Goals": 50},
+        {"Player": "Alfredo Di Stefano", "Goals": 49},
+        {"Player": "Andriy Shevchenko", "Goals": 48},
+        {"Player": "Zlatan Ibrahimovic", "Goals": 48},
+        {"Player": "Eusebio", "Goals": 46},
+        {"Player": "Filippo Inzaghi", "Goals": 46},
+        {"Player": "Didier Drogba", "Goals": 44},
+        {"Player": "Mohamed Salah", "Goals": 43}
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": ["Player"],
+          "field": "Goals",
+          "sort": {"field": [], "order": []},
+          "as": ["Goals_start", "Goals_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Goals\"]) && isFinite(+datum[\"Goals\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {"name": "x_step", "value": 20},
+    {
+      "name": "width",
+      "update": "bandspace(domain('x').length, 0.1, 0.05) * x_step"
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "rect",
+      "style": ["bar"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "fill": {"value": "#4c78a8"},
+          "ariaRoleDescription": {"value": "bar"},
+          "description": {
+            "signal": "\"Player: \" + (isValid(datum[\"Player\"]) ? datum[\"Player\"] : \"\"+datum[\"Player\"]) + \"; Goals: \" + (format(datum[\"Goals\"], \"\"))"
+          },
+          "x": {"scale": "x", "field": "Player"},
+          "width": {"signal": "max(0.25, bandwidth('x'))"},
+          "y": {"scale": "y", "field": "Goals_end"},
+          "y2": {"scale": "y", "field": "Goals_start"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "domain": {"data": "data_0", "field": "Player", "sort": {"op":"sum","field":"Goals"}},
+      "range": {"step": {"signal": "x_step"}},
+      "paddingInner": 0.1,
+      "paddingOuter": 0.05
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {"data": "data_0", "fields": ["Goals_start", "Goals_end"]},
+      "range": [{"signal": "height"}, 0],
+      "nice": true,
+      "zero": true
+    }
+  ],
+  "axes": [
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Player",
+      "labelAngle": 270,
+      "labelAlign":"right",
+      "labelBaseline": "middle",
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Goals",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ]
+}
