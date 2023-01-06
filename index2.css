@@ -72,7 +72,7 @@ p2{
     align-items: center;
     justify-content: center;
     align-content: center;
-    display: -moz-inline-stack;
+    display: grid;
     margin: auto;
 
 }
