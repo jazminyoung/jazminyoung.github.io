@@ -7,7 +7,7 @@
   "mark": {"type": "line", "color": "#618093", "strokeWidth": 2, "opacity": 1},
   "title": {
     "text":"Females 25-54 Years Old",
-    "subtitle": "Source: ONS, in Thousands",
+    "subtitle": "Source: ONS, in thousands.",
     "subtitleFontStyle": "lato",
     "subtitleFontSize": 10,
     "anchor": "start",
