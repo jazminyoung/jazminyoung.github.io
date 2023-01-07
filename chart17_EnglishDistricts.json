@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "width":500,
+    "height":500,
+  
+    "data":{
+      "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/EnglishLocalAuthorityDistricts.json",
+      "format":{
+        "type":"topojson",
+        "feature":"lad"}},
+  
+        "projection":{
+          "type":"mercator"
+        },
+  
+        "mark":{
+          "type": "geoshape",
+          "fill": "lightgrey",
+          "stroke": "darkgrey",
+          "strokeWidth": 0.5
+        },
+  
+        "encoding":{
+          "tooltip":{"field":"properties.LAD13NM"}
+        }
+      }
