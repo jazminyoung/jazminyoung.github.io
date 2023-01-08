@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+        "text": "Wales - Westminster Parlimentary Constituency",
+        "subtitle": "Mercator Projection",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "color": "black"},
+
+  "width": 500,
+  "height": 500,
+
+  "data":{
+    "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/WalesGEO2.json",
+    "format":{
+      "type":"topojson",
+      "feature":"wpc"}},
+
+      "projection":{
+        "type":"mercator"
+      },
+
+      "mark":{
+        "type": "geoshape",
+        "fill": "lightgrey",
+        "stroke": "darkgrey",
+        "strokeWidth": 0.5
+      },
+
+      "encoding":{
+        "tooltip":{"field":"properties.PCON13NM"}
+      }
+    }
