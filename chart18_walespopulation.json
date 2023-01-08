@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 500,
+  "height": 500,
+  "title": {
+    "text": "Wales - Population",
+    "subtitle": ["Source: ONS", ""],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "black",
+    "frame": "group"
+  },
+  "data": [
+    {
+      "name": "source_1",
+      "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/populationwales.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/WalesGEO2.json",
+      "format": {"type": "topojson", "feature": "wpc", "parse": {}},
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "datum[\"properties\"] && datum[\"properties\"][\"PCON13NM\"]",
+          "as": "properties.PCON13NM"
+        },
+        {
+          "type": "lookup",
+          "from": "source_1",
+          "key": "PCON11NM",
+          "fields": ["properties.PCON13NM"],
+          "values": ["Population"]
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Population\"]) && isFinite(+datum[\"Population\"])"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {"signal": "[width, height]"},
+      "fit": {"signal": "data('source_0')"},
+      "type": "mercator"
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "shape",
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0},
+        "fill": {"scale": "color", "field": "Population"},
+          "tooltip": {
+            "signal": "{\"Parliamentary Constituency\": isValid(datum[\"properties.PCON13NM\"]) ? datum[\"properties.PCON13NM\"] : \"\"+datum[\"properties.PCON13NM\"], \"Population\": isValid(datum[\"Population\"]) ? datum[\"Population\"] : \"\"+datum[\"Population\"]}"
+          },
+          "ariaRoleDescription": {"value": "geoshape"},
+          "description": {
+            "signal": "\"Parliamentary Constituency: \" + (isValid(datum[\"properties.PCON13NM\"]) ? datum[\"properties.PCON13NM\"] : \"\"+datum[\"properties.PCON13NM\"]) + \"; Population: \" + (isValid(datum[\"Population\"]) ? datum[\"Population\"] : \"\"+datum[\"Population\"])"
+          }
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "source_0", "field": "Population"},
+      "range": "heatmap",
+      "interpolate": "hcl",
+      "zero": false
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "gradientLength": {"signal": "clamp(height, 64, 200)"},
+      "title": "Population"
+    }
+  ],
+  "config": {"style": {"cell": {"stroke": "transparent"}}}
+}
