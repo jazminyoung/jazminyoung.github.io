@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Homicide and the Possession of Weapons",
+    "subtitle": "Police reported in England and Wales(2022).  Source:ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "black"
+  },
+  "config": {"background": "#ffffff"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/weapsonsandhomicides.csv"
+  },
+  "height": 500,
+  "width": 500,
+  "layer": [
+    {
+      "mark": {"type": "circle", "color": "rgb(0,47,167)", "size": 100},
+      "encoding": {
+        "x": {
+          "field": "Possession of weapons",
+          "type": "quantitative",
+          "scale": {"domain": [0, 8000]},
+          "title": "Weapons"
+        },
+        "y": {
+          "field": "Homicide",
+          "type": "quantitative",
+          "title": "Homicide"
+        },
+        "tooltip": [
+          {
+            "field": "Area Name",
+            "type": "nominal",
+            "title": "Area Name"
+          },
+          {
+            "field": "Homicide",
+            "type": "quantitative",
+            "title": "Homicide",
+            "format": ".2f"
+          },
+          {
+            "field": "Possession of weapons",
+            "type": "quantitative",
+            "title": "Possession of weapons",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "grey"},
+      "transform": [
+        {
+          "regression": "Homicide",
+          "on": "Possession of weapons",
+          "extent": [0, 8000]
+        }
+      ],
+      "encoding": {
+        "x": {"field": "Possession of weapons", "type": "quantitative"},
+        "y": {"field": "Homicide", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "Homicide",
+          "on": "Possession of weapons",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ]
+}
