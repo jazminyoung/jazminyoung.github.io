@@ -12,8 +12,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/weapsonsandhomicides.csv"
   },
-  "height": 325,
-  "width": 325,
+  "height": 350,
+  "width": 350,
   "layer": [
     {
       "mark": {"type": "circle", "color": "rgb(0,47,167)", "size": 100},
