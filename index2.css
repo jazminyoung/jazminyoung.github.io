@@ -50,28 +50,20 @@ p2{
 .chart{
     background-color: rgb(187, 221, 193);
     width:400px;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: rgb(244, 205, 182);
     
 }
     
 .grid_items{
     background-color: white;
     width: 200px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgb(244, 205, 182);
-    align-items: center;
+    align-items: left;
     justify-content: center;
     align-content: center;
     display: table;
     margin: auto;
     body {
           display: flex;
-          align-items: center;
+          align-items: table;
           justify-content: center;
           height: 900px;
           font-size: 2rem;
