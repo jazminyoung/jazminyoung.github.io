@@ -1,15 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
   "title": {
-    "text": "Median Gross Annual Earnings and Lower Quartile House Prices",
+    "text": "Gross Annual Earnings and House Prices",
     "subtitle": ["", "Earnings for full time workers aged 22 to 29 years. Source: ONS"],
     "subtitleFontStyle": "",
     "subtitleFontSize": 10,
     "anchor": "middle",
     "color": "black"
   },
-  "width": 290,
-  "height": 290,
+  "width": 325,
+  "height": 325,
   "config": {"background": "white"},
   "data": {
     "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/data_hardshipbuyinghousholds.csv"
