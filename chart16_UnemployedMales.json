@@ -6,7 +6,7 @@
   },
   "mark": {"type": "line", "color": "#618093", "strokeWidth": 2, "opacity": 1},
   "title": {
-    "text":"Unemployed Males 16-64",
+    "text":"Unemployed M 16-64 Years",
     "subtitle": "Source: ONS, in Thousands",
     "subtitleFontStyle": "lato",
     "subtitleFontSize": 10,
