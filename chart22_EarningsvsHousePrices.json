@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "title": {
+    "text": "Median Gross Annual Earnings and Lower Quartile House Prices",
+    "subtitle": ["", "Earnings for full time workers aged 22 to 29 years. Source: ONS"],
+    "subtitleFontStyle": "",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "black"
+  },
+  "width": 350,
+  "height": 350,
+  "config": {"background": "white"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/data_hardshipbuyinghousholds.csv"
+  },
+  "layer": [
+    {
+      "mark": {"opacity": 0.5, "type": "line", "color" :"rgb(0,191,255)"},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {
+          "field": "Gross annual earnings",
+          "title": "Median Gross Annual Earnings",
+          "type": "quantitative",
+          "scale": {"domain": [50, 290]},
+          "axis": {"orient": "left", "titleColor": "rgb(0,191,255)"}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "rgb(255,0,0)"},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {
+          "field": "Lower quartile house prices",
+          "title": "Lower Quartile House Prices",
+          "type": "quantitative",
+          "scale": {"domain": [50, 290]},
+          "axis": {"orient": "right", "titleColor": "rgb(255,0,0)"}
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}}
+}
