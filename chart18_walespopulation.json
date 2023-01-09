@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 325,
-  "height": 325,
+  "width": 350,
+  "height": 350,
   "title": {
     "text": "Wales - Population",
     "subtitle": ["Source: ONS", ""],
@@ -13,8 +13,7 @@
     "color": "black",
     "frame": "group"
   },
-  "data": [
-    {
+  "data": 
       "name": "source_1",
       "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/populationwales.csv",
       "format": {"type": "csv", "delimiter": ","}
