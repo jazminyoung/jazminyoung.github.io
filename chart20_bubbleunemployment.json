@@ -1,0 +1,101 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 300,
+  "height": 300,
+  "title": {
+    "text": "Unemployment Rates and Wchool Enrollment Worldwide",
+    "subtitle": [
+      "Unemployment % (x), School Enrollment, tertiary % (y). 2020 data",
+      "Size of points based on popluation. Source: The World Bank",
+      ""
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/data_nutrition2.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Unemployment (%)\"]) && isFinite(+datum[\"Unemployment (%)\"]) && isValid(datum[\"School Enrollment, tertiary (%)\"]) && isFinite(+datum[\"School Enrollment, tertiary (%)\"]) && isValid(datum[\"Population\"]) && isFinite(+datum[\"Population\"])"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "symbol",
+      "style": ["circle"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "fill": {"value": "green"},
+          "tooltip": {
+            "signal": "{\"Country\": isValid(datum[\"Country Name\"]) ? datum[\"Country Name\"] : \"\"+datum[\"Country Name\"], \"Unemployment(%)\": format(datum[\"Unemployment (%)\"], \".0f\"), \"Enrollment (%)\": format(datum[\"School Enrollment, tertiary (%)\"], \".2f\"), \"Population\": format(datum[\"Population\"], \",\")}"
+          },
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Unemployment (%): \" + (format(datum[\"Unemployment (%)\"], \"\")) + \"; School Enrollment, tertiary (%): \" + (format(datum[\"School Enrollment, tertiary (%)\"], \"\")) + \"; Population: \" + (format(datum[\"Population\"], \"\")) + \"; Country: \" + (isValid(datum[\"Country Name\"]) ? datum[\"Country Name\"] : \"\"+datum[\"Country Name\"]) + \"; Unemployment(%): \" + (format(datum[\"Unemployment (%)\"], \".0f\")) + \"; Enrollment (%): \" + (format(datum[\"School Enrollment, tertiary (%)\"], \".2f\"))"
+          },
+          "x": {"scale": "x", "field": "Unemployment (%)"},
+          "y": {"scale": "y", "field": "School Enrollment, tertiary (%)"},
+          "size": {"scale": "size", "field": "Population"},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [0, 20],
+      "range": [0, {"signal": "width"}],
+      "zero": true
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [10, 155],
+      "range": [{"signal": "height"}, 0],
+      "zero": false
+    },
+    {
+      "name": "size",
+      "type": "linear",
+      "domain": {"data": "source_0", "field": "Population"},
+      "range": [0, 1250],
+      "zero": true
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ],
+  "config": {"style": {"cell": {"stroke": "transparent"}}}
+}
