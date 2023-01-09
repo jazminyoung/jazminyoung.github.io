@@ -1,9 +1,17 @@
+/* Richard Davies, Data Science for Economists */
+
+/* This is my second CSS file */
+
+
+/* Import a font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body{
     background-color: rgb(236, 203, 232);
  }
 
+-
+-/*Choose the appearance of the tags, h1, h2, h3 and p:*/
 h1, h2, h3, p{
     color:rgb(0, 0, 0);
     font-family: 'Roboto', sans-serif;
@@ -30,7 +38,7 @@ p2{
 }
 
 
-.myWeek5{
+9.myWeek5{
     margin: auto;
     max-width: 600px;
     background-color: rgba(188, 186, 186, 0.92);
