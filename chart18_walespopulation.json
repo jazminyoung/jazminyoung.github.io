@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 375,
-  "height": 375,
+  "width": 325,
+  "height": 325,
   "title": {
     "text": "Wales - Population",
     "subtitle": ["Source: ONS", ""],
