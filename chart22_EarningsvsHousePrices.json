@@ -8,8 +8,8 @@
     "anchor": "middle",
     "color": "black"
   },
-  "width": 350,
-  "height": 350,
+  "width": 325,
+  "height": 325,
   "config": {"background": "white"},
   "data": {
     "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/data_hardshipbuyinghousholds.csv"
