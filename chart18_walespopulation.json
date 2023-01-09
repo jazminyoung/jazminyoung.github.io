@@ -13,7 +13,8 @@
     "color": "black",
     "frame": "group"
   },
-  "data": {
+  "data": [
+    {
       "name": "source_1",
       "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/populationwales.csv",
       "format": {"type": "csv", "delimiter": ","}
