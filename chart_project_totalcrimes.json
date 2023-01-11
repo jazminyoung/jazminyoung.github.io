@@ -1,0 +1,151 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "title": {
+    "text": "Comparing Different Crimes",
+    "subtitle": [
+      "Police Reported Crimes June 2015 - June 2022. Source: ONS.",
+      ""
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/crimes_2015to2022.csv",
+      "format": {"type": "csv", "parse": {"Year": "date"}, "delimiter": ","}
+    },
+    {
+      "name": "facet_domain",
+      "source": "source_0",
+      "transform": [{"type": "aggregate", "groupby": ["Crime"]}]
+    },
+    {
+      "name": "facet_domain_column",
+      "transform": [
+        {
+          "type": "sequence",
+          "start": 0,
+          "stop": {"signal": "min(length(data(\"facet_domain\")), 3)"}
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {"name": "child_width", "value": 120},
+    {"name": "child_height", "value": 120}
+  ],
+  "layout": {"padding": 20, "bounds": "full", "align": "none", "columns": 3},
+  "marks": [
+    {
+      "name": "column_footer",
+      "type": "group",
+      "role": "column-footer",
+      "from": {"data": "facet_domain_column"},
+      "encode": {"update": {"width": {"signal": "child_width"}}},
+      "axes": [
+        {
+          "scale": "x",
+          "orient": "bottom",
+          "grid": false,
+          "labelFlush": true,
+          "labelOverlap": true,
+          "tickCount": {"signal": "ceil(child_width/40)"},
+          "zindex": 0
+        }
+      ]
+    },
+    {
+      "name": "cell",
+      "type": "group",
+      "title": {
+        "text": {
+          "signal": "isValid(parent[\"Crime\"]) ? parent[\"Crime\"] : \"\"+parent[\"Crime\"]"
+        },
+        "style": "guide-label",
+        "frame": "group",
+        "offset": 10
+      },
+      "style": "cell",
+      "from": {
+        "facet": {"name": "facet", "data": "source_0", "groupby": ["Crime"]}
+      },
+      "sort": {"field": ["datum[\"Crime\"]"], "order": ["ascending"]},
+      "encode": {
+        "update": {
+          "width": {"signal": "child_width"},
+          "height": {"signal": "child_height"}
+        }
+      },
+      "marks": [
+        {
+          "name": "child_marks",
+          "type": "line",
+          "style": ["line"],
+          "sort": {"field": "datum[\"Year\"]"},
+          "from": {"data": "facet"},
+          "encode": {
+            "update": {
+              "strokeWidth": {"value": 2},
+              "stroke": {"value": "#4c78a8"},
+              "description": {
+                "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Total: \" + (format(datum[\"Total\"], \"\"))"
+              },
+              "x": {"scale": "x", "field": "Year"},
+              "y": {"scale": "child_y", "field": "Total"},
+              "defined": {
+                "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"Total\"]) && isFinite(+datum[\"Total\"])"
+              }
+            }
+          }
+        }
+      ],
+      "scales": [
+        {
+          "name": "child_y",
+          "type": "linear",
+          "domain": {"data": "facet", "field": "Total"},
+          "range": [{"signal": "child_height"}, 0],
+          "nice": true,
+          "zero": true
+        }
+      ],
+      "axes": [
+        {
+          "scale": "child_y",
+          "orient": "left",
+          "gridScale": "x",
+          "grid": true,
+          "tickCount": {"signal": "ceil(child_height/40)"},
+          "domain": false,
+          "labels": false,
+          "aria": false,
+          "maxExtent": 0,
+          "minExtent": 0,
+          "ticks": false,
+          "zindex": 0
+        },
+        {
+          "scale": "child_y",
+          "orient": "left",
+          "grid": false,
+          "labelOverlap": true,
+          "tickCount": {"signal": "ceil(child_height/40)"},
+          "zindex": 0
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "domain": {"data": "source_0", "field": "Year"},
+      "range": [0, {"signal": "child_width"}]
+    }
+  ],
+}
