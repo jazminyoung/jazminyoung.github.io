@@ -50,25 +50,35 @@
       <div class="chart" id="Chart2"></div>
     
     
+       <h3> Chart 3 - Business Closures</h3>
     
-       <h3> Chart 3 - Annual Earnings vs House Prices</h3>
-       <p> Gross annual earnings have not risen in pair with house prices, the issue with this is that there will be a higher demand for areas with cheaper houses which tend to have high unemployment levels. In turn this could potentially push lower skilled workers out of jobs and be replaced by higher skilled workers that now live within the area for convience.</p>
+       <p>It is clear that business closures link to unemployment as if a business closes down then a employee could be unemployed, however we must considered that a lot of employees may hahev work already lined up. The trend of the graph from 2020-2022 is very coherant with the trend in chart 1 showing that they is a link between the two.</p>
       <div class="chart" id="Chart3"></div>
     
     
+       <h3> Chart 4 - Annual Earnings vs House Prices</h3>
     
-       <h3> Chart 4 - Crime</h3>
-       <p> From the charts below we cannot defer that unemployment is the causality of crime, however it is clear that total crime increased during a period of time that unemployment increased; in particular drug offences which could imply the social impact of the rise such as mental wellbeing.
-      <div class="chart" id="Chart4"<>/div>    
+       <p> Gross annual earnings have not risen in pair with house prices, the issue with this is that there will be a higher demand for areas with cheaper houses which tend to have high unemployment levels. In turn this could potentially push lower skilled workers out of jobs and be replaced by higher skilled workers that now live within the area for convience.</p>
+      <div class="chart" id="Chart4"></div>
+    
+    
+    
+       <h3> Chart 5 - Crime</h3>
+    
+       <p> From the charts below we cannot defer that unemployment is the causality of crime, however it is clear that total crime increased during a period of time that unemployment increased; in particular drug offences which could imply the social impact of the rise such as mental wellbeing.</p> 
+      <div class="chart" id="Chart5"<>/div>    
         
-       <h3>Data</h3>
+       
+    <h3>Data</h3>
        <p> All of my data that I used I downloaded as a csv file from The World Bank and ONS. I found it difficult finding relevant data and this proved as I did want to find unemployment rates over time in relation to wpc and produce a map with sliding year bar and further investigate high unemployment rated areas to distinguish the impact. </p> 
            
-       <h3>Data Cleaning</h3>    
-       <p>For data cleaning I used a mix of both colab and excel depending on which data I used and the size of the data set. The majority of my datasets were very large and therfore the tools of adding new components and cleaning the data were much needed to ensure I could then code in Vegalite. Additionally I used excel to create formulars to defer new variables such as the data for the umemployment chart.</p>    
+       
+    <h3>Data Cleaning</h3>    
+       <p>For data cleaning I used a mix of both colab and excel depending on which data I used and the size of the data set. The majority of my datasets were very large and therfore the tools of adding new components and cleaning the data, using python, were much needed to ensure I could then code in Vegalite. Additionally I used excel to create formulars to defer new variables such as the data for the umemployment chart.</p>    
            
-       <h3>Conclusions</h3>
-       <p>Overall unemployment itself has declined and from the charts it would show that this can be a positive for housing prices as individuals themselves when deciding where to live and in turn benefit the economy for high skilled workers to remain in jobs that would gain the highest producitity. Even though schooling may not be a direct cause for lower levels of unemployment, it can be implied when comparing to other countries the importance behind it. Even though crime has increased, I do not see a direct link from the crime levels inncreasing to unemployment and therefore I would not consider this a major impact.      
+       <
+    h3>Conclusions</h3>
+       <p>Overall unemployment itself has declined and from the charts it would show that this can be a positive for housing prices as individuals themselves when deciding where to live and in turn benefit the economy for high skilled workers to remain in jobs that would gain the highest producitity. Even though schooling may not be a direct cause for lower levels of unemployment, it can be implied when comparing to other countries the importance behind it. Even though crime has increased, I do not see a direct link from the crime levels inncreasing to unemployment and therefore I would not consider this a major impact.</p>      
                                                                                                                                       
                                                                                                                                       
        <h3>Sources</h3>    
@@ -82,8 +92,9 @@
     //Define charts:
     var myChart1 = "chart_PROJECT_unemployment.json";
     var myChart2 = "chart20_bubbleunemployment.json";
-    var myChart3 = "chart22_EarningsvsHousePrices.json";
-    var myChart4 = "chart_PROJECT_totalcrimes.json";   
+    var myChart3 = "chart_PROJECT_businessclosures.json";    
+    var myChart4 = "chart22_EarningsvsHousePrices.json";
+    var myChart5 = "chart_PROJECT_totalcrimes.json";   
                                                     
     
 
@@ -91,7 +102,8 @@
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
     vegaEmbed('#Chart3', myChart3);
-    vegaEmbed('#Chart4', myChart4);    
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
        
    
 </script>
