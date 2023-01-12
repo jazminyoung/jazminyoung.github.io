@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "title": {
+        "text": "Unemployment - UK",
+        "subtitle": "Unemployment rate, aged 16 and over. Source: ONS",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "black"},
+
+    "width":300,
+    "height":300,
+
+    "mark":{
+        "type": "line",
+        "color":"rgb(0,112,192)",
+        "strokeWidth":2,
+        "opacity":1},
+
+    "data": {
+       "url": "https://raw.githubusercontent.com/jazminyoung/jazminyoung.github.io/main/data_unemployment.csv"},
+
+    "transform": [
+      
+      {"calculate": "year(datum.Date)", "as": "year"},
+      {"filter": "datum.year>=minYear"},
+      {"filter": "datum.year<=maxYear"},
+
+      {"calculate": "datum.Unemployment_Rate/100", "as": "value"}
+    ],
+
+    "params": [    
+      {"name":"minYear", "value":1971,
+        "bind":{
+           "input": "range",
+          "min": 1971, 
+          "max": 2022, 
+          "step": 1,
+          "name": "Start year:"}},
+
+    {"name":"maxYear", "value":2022,
+       "bind":{
+         "input": "range",
+         "min": 1971, 
+         "max": 2022, 
+         "step": 1,
+         "name": "End year:"}
+    }
+  ],    
+ 
+
+    "encoding": {
+      "x": {
+          "field": "Date",
+          "type": "temporal",
+          "title":null},
+      "y": {
+          "field": "value",
+          "type": "quantitative",
+          "title":null,
+          "axis":{"format":"%"}}
+    }
+}
