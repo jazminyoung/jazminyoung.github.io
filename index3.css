@@ -1,49 +1,130 @@
-/* Richard Davies, Data Science for Economists */
-
-/* This is my second CSS file */
+/* Jazmin Young, Data Science for Economists */
 
 
-/* Import a font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
-/* Set the background color for my page: */
-
-/* Book on colour = Joseph Albers - Interaction of Colour */
-
 body{
-    background-color: rgb(236, 203, 232);
+    background-color: rgb(187, 221, 193);
+    
+    backkground-size: cover;
+    align-items: center;
+    flex-direction: column;
  }
+
+.wrap{
+    display: block;
+    margin: auto;
+}
+
+.link1{
+    border-color: rgb(244, 205, 182);
+    
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: dashed;
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:700;
+    color: rgb(255, 255, 255);
+    
+   text-decoration: none;
+   
+}
+
+.link1:hover{
+
+    background-color: rgba(172, 220, 243);
+
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 3px;
+    
+}
+
+.link1colab{
+    border-color: rgb(244, 205, 182);
+    
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border-style: dashed;
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:700;
+    color: rgb(255, 255, 255);
+    
+   text-decoration: none;
+   
+}
+
+
+.link1colab:hover{
+
+    background-color: rgba(172, 220, 243);
+
+    border:2px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 3px;
 
 
 /* Choose the appearance of the tags, h1, h3 and p: */
-h1, h3, p{
+h1{
     color:rgb(0, 0, 0);
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    font-variant: small-caps;
 }
     
-.myWeek1{
-    margin: auto;
-    max-width: 600px;
-    background-color: rgb(220, 220, 220);
-
-      
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: rgb(100,100,100);
+h3{
+    color:rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-variant: small-caps;
 }
 
+p{
+    color:rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-variant: normal;
+}
 
-/* Set the apperance of the class, chart */
+    
+.project{
+    margin: auto;
+    max-width: auto;
+    text-align: center;
+    border-bottom: 5px;
+    border-top: 5px;
+    border-right: 5px;
+    border-left: 5px;
+    border-style: dotted;
+    border-width: 1px;
+    border-radius: 5px;
+    border-colour: (244, 205, 182);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-colour: rgb (172, 229, 243);
+    
+}
+    
+
 .chart{
-    background-color: white;
-    width:450px;
+    background-color: rgb (255, 255, 255);
+    width:auto;
     border-width: 2px;
     border-style: solid;
-    border-radius: 10px;
-    border-color: grey;
+    border-radius: 0px;
+    border-color: rgb (100, 100, 100);
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-flex;
     
 }
     
