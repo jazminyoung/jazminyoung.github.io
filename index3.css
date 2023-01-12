@@ -123,9 +123,9 @@ p{
     background-color: rgb (255, 255, 255);
     width:auto;
     height: auto;
-    border-width: 3px;
+    border-width: 18px;
     border-style: solid;
-    border-radius: 0px;
+    border-radius: 18px;
     margin-left: 50px;
     margin-right: 50px;
     border-color: rgb (100, 100, 100);
