@@ -33,9 +33,9 @@
     <div
        
        
-       <h1> Unemployment. The Potential Causes and Impacts</h1>
+       <h2> Unemployment. The Potential Causes and Impacts</h2>
     
-       <h2>Unemployment tends fluctuate in the UK, this could be a result of many reasons such as redundancies, wage changes, changes to the benefit system, growth in self-employment, job opportunities through schooling, the change in contracts offered within jobs, seasonal fluctuations, change in GDP, as well as many other reasons. Unemployment as a whole tends to objectively give a bad signal for the economy. It is thought that the potential impacts of unemployment could possibly be both socially and economically. This project will outline the current state of the UK's unemployment, possible causes and some of the potential impacts, with the aim and objective to demonstrate this through real data to code charts and give overall plausable conclusion on what the causes and impacts really are.</h2>
+       <h1>Unemployment tends fluctuate in the UK, this could be a result of many reasons such as redundancies, wage changes, changes to the benefit system, growth in self-employment, job opportunities through schooling, the change in contracts offered within jobs, seasonal fluctuations, change in GDP, as well as many other reasons. Unemployment as a whole tends to objectively give a bad signal for the economy. It is thought that the potential impacts of unemployment could possibly be both socially and economically. This project will outline the current state of the UK's unemployment, possible causes and some of the potential impacts, with the aim and objective to demonstrate this through real data to code charts and give overall plausable conclusion on what the causes and impacts really are.</h1>
     
        <h3> Chart 1 - Unemployment Rates</h3>
            
@@ -50,7 +50,9 @@
       <div class="chart" id="Chart2"></div>
     
     
-       <
+       <h3> Chart 3 - Annual Earnings vs House Prices</h3>
+       <p> Gross annual earnings have not risen in pair with house prices, the issue with this is that there will be a higher demand for areas with cheaper houses which tend to have high unemployment levels. In turn this could potentially push lower skilled workers out of jobs and be replaced by higher skilled workers that now live within the area for convience.
+      <div class="chart" id="Chart3"></div>
            
         
        <h3>Data</h3>
@@ -63,9 +65,7 @@
                                                                                                                                       
                                                                                                                                       
        <h3>Sources</h3>    
-       <a href= "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms" class="link" id=link">ONS</a>
-       <a href= "" class="link" id=link">The World Bank</a>                                                                                                             
-       <a href= "" class="link" id=link">ONS</a>
+     
                                                                                                                                       
                                                                                                                                       
                                                                                                                                       
@@ -75,17 +75,24 @@
     //Define charts:
     var myChart1 = "chart_PROJECT_unemployment.json";
     var myChart2 = "chart20_bubbleunemployment.json";
+    var myChart3 = "chart22_EarningsvsHousePrices.json";
+                                                    
     
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
-        
+    vegaEmbed('#Chart3', myChart3);
+       
    
 </script>
 
 </html>
+<a href= "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms" class="link" id=link">ONS</a>
+       <a href= "" class="link" id=link">The World Bank</a>                                                                                                             
+       <a href= "" class="link" id=link">ONS</a>
+                                                    
 
-<a href= "https://github.com/jazminyoung/jazminyoung.github.io/blob/main/chart_PROJECT_unemployment.json" class="link" id=link">Github</a href>
+    <a href= "https://github.com/jazminyoung/jazminyoung.github.io/blob/main/chart_PROJECT_unemployment.json" class="link" id=link">Github</a href>
                                                                                                                             
                                                                                                                                
