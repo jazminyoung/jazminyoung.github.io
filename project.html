@@ -33,9 +33,9 @@
     <div
        
        
-       <h2> Unemployment. The Potential Causes and Impacts</h2>
+       <h1> Unemployment. The Potential Causes and Impacts</h1>
     
-       <h1>Unemployment tends fluctuate in the UK, this could be a result of many reasons such as redundancies, wage changes, changes to the benefit system, growth in self-employment, job opportunities through schooling, the change in contracts offered within jobs, seasonal fluctuations, change in GDP, as well as many other reasons. Unemployment as a whole tends to objectively give a bad signal for the economy. It is thought that the potential impacts of unemployment could possibly be both socially and economically. This project will outline the current state of the UK's unemployment, possible causes and some of the potential impacts, with the aim and objective to demonstrate this through real data to code charts and give overall plausable conclusion on what the causes and impacts really are.</h1>
+       <h2>Unemployment tends fluctuate in the UK, this could be a result of many reasons such as redundancies, wage changes, changes to the benefit system, growth in self-employment, job opportunities through schooling, the change in contracts offered within jobs, seasonal fluctuations, change in GDP, as well as many other reasons. Unemployment as a whole tends to objectively give a bad signal for the economy. It is thought that the potential impacts of unemployment could possibly be both socially and economically. This project will outline the current state of the UK's unemployment, possible causes and some of the potential impacts, with the aim and objective to demonstrate this through real data to code charts and give overall plausable conclusion on what the causes and impacts really are.</h2>
     
        <h3> Chart 1 - Unemployment Rates</h3>
            
@@ -50,18 +50,25 @@
       <div class="chart" id="Chart2"></div>
     
     
+    
        <h3> Chart 3 - Annual Earnings vs House Prices</h3>
        <p> Gross annual earnings have not risen in pair with house prices, the issue with this is that there will be a higher demand for areas with cheaper houses which tend to have high unemployment levels. In turn this could potentially push lower skilled workers out of jobs and be replaced by higher skilled workers that now live within the area for convience.
       <div class="chart" id="Chart3"></div>
-           
+    
+    
+    
+       <h3> Chart 4 - Crime</h3>
+       <p> From the charts below we cannot defer that unemployment is the causality of crime, however it is clear that total crime increased during a period of time that unemployment increased; in particular drug offences which could imply the social impact of the rise such as mental wellbeing.
+      <div class="chart" id="Chart4"<>/div>    
         
        <h3>Data</h3>
-                                                                                                                                      
+       <p> All of my data that I used I downloaded as a csv file from The World Bank and ONS. I found it difficult finding relevant data and this proved as I did want to find unemployment rates over time in relation to wpc and produce a map with sliding year bar and further investigate high unemployment rated areas to distinguish the impact. </p> 
            
        <h3>Data Cleaning</h3>    
-           
+       <p>For data cleaning I used a mix of both colab and excel depending on which data I used and the size of the data set. The majority of my datasets were very large and therfore the tools of adding new components and cleaning the data were much needed to ensure I could then code in Vegalite. Additionally I used excel to create formulars to defer new variables such as the data for the umemployment chart.</p>    
            
        <h3>Conclusions</h3>
+       <p>Overall unemployment itself has declined and from the charts it would show that this can be a positive for housing prices as individuals themselves when deciding where to live and in turn benefit the economy for high skilled workers to remain in jobs that would gain the highest producitity. Even though schooling may not be a direct cause for lower levels of unemployment, it can be implied when comparing to other countries the importance behind it. Even though crime has increased, I do not see a direct link from the crime levels inncreasing to unemployment and therefore I would not consider this a major impact.      
                                                                                                                                       
                                                                                                                                       
        <h3>Sources</h3>    
@@ -76,6 +83,7 @@
     var myChart1 = "chart_PROJECT_unemployment.json";
     var myChart2 = "chart20_bubbleunemployment.json";
     var myChart3 = "chart22_EarningsvsHousePrices.json";
+    var myChart4 = "chart_PROJECT_totalcrimes.json";   
                                                     
     
 
@@ -83,6 +91,7 @@
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
     vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);    
        
    
 </script>
