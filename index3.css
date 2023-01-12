@@ -8,14 +8,12 @@ body{
     background-color: rgba(172, 220, 243);
     
     backkground-size: cover;
+    margin: 0;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    min-height: 100vh;
  }
-
-.wrap{
-    display: block;
-    margin: auto;
-}
 
 .link1{
     border-color: rgb(244, 205, 182);
@@ -69,6 +67,11 @@ body{
     border-color: rgb(0, 0, 0);
     border-style: solid;
     border-radius: 3px;
+    
+.wrap{
+    display: block;
+    margin: auto;
+}    
 
 
 /* Choose the appearance of the tags, h1, h3 and p: */
@@ -98,32 +101,35 @@ p{
     margin: auto;
     max-width: auto;
     text-align: center;
-    border-bottom: 5px;
     border-top: 5px;
-    border-right: 5px;
+    border-bottom: 5px;
     border-left: 5px;
+    border-right: 5px;
     border-style: dotted;
+    background-colour: rgb (172, 229, 243);
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    
     border-width: 1px;
+    border-style: solid;
     border-radius: 5px;
     border-colour: (244, 205, 182);
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-    background-colour: rgb (172, 229, 243);
-    
 }
     
 
 .chart{
     background-color: rgb (255, 255, 255);
     width:auto;
-    border-width: 2px;
+    height: auto;
+    border-width: 3px;
     border-style: solid;
     border-radius: 0px;
-    border-color: rgb (100, 100, 100);
     margin-left: 50px;
     margin-right: 50px;
+    border-color: rgb (100, 100, 100);
+    margin-bottom: 0.5cm;
     display: inline-flex;
     
 }
